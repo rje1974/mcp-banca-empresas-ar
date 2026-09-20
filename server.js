@@ -58,6 +58,12 @@ server.registerTool(
     description:
       'Lista las cuentas bancarias disponibles con su banco, tipo, moneda y numero. ' +
       'Util como primer paso para saber que cuentas existen antes de pedir movimientos.',
+    annotations: {
+      readOnlyHint: true,
+      destructiveHint: false,
+      idempotentHint: true,
+      openWorldHint: true,
+    },
     inputSchema: {},
   },
   async () => {
@@ -84,6 +90,12 @@ server.registerTool(
     description:
       'Saldos actuales de todas las cuentas: contable, operativo y proyectado. ' +
       'Acepta un rango de fechas opcional de hasta 64 dias; para rangos mas largos usar saldos_historicos.',
+    annotations: {
+      readOnlyHint: true,
+      destructiveHint: false,
+      idempotentHint: true,
+      openWorldHint: true,
+    },
     inputSchema: {
       desde: FECHA.optional().describe('Fecha desde (YYYY-MM-DD), opcional'),
       hasta: FECHA.optional().describe('Fecha hasta (YYYY-MM-DD), opcional'),
@@ -127,6 +139,12 @@ server.registerTool(
       'Saldos diarios en un rango de fechas largo. Parte el rango automaticamente en tramos ' +
       'de 60 dias porque la API no acepta mas de 64 por consulta, y devuelve la serie unificada. ' +
       'Devuelve un resumen por cuenta; usar detalle para la serie dia por dia.',
+    annotations: {
+      readOnlyHint: true,
+      destructiveHint: false,
+      idempotentHint: true,
+      openWorldHint: true,
+    },
     inputSchema: {
       desde: FECHA.describe('Fecha desde (YYYY-MM-DD)'),
       hasta: FECHA.describe('Fecha hasta (YYYY-MM-DD)'),
@@ -174,6 +192,12 @@ server.registerTool(
       'Movimientos de todas las cuentas en un rango de fechas. Descubre las cuentas solo. ' +
       `Por defecto devuelve un resumen (totales por cuenta y los ${MOVIMIENTOS_EN_RESUMEN} mas recientes); ` +
       'pedir detalle solo para rangos cortos, porque un rango largo son miles de registros.',
+    annotations: {
+      readOnlyHint: true,
+      destructiveHint: false,
+      idempotentHint: true,
+      openWorldHint: true,
+    },
     inputSchema: {
       desde: FECHA.describe('Fecha desde (YYYY-MM-DD)'),
       hasta: FECHA.describe('Fecha hasta (YYYY-MM-DD)'),
