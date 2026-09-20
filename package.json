@@ -1,6 +1,6 @@
 {
   "name": "interbanking-mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "mcpName": "io.github.rje1974/interbanking",
   "description": "Servidor MCP de solo lectura para la API de Interbanking (Argentina) - consulta saldos y movimientos bancarios desde tu agente",
   "type": "module",
@@ -11,7 +11,8 @@
   "files": [
     "server.js",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "PRIVACY.md"
   ],
   "scripts": {
     "check": "node --check server.js",
