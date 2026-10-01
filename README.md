@@ -1,5 +1,7 @@
 # interbanking-mcp
 
+> **Proyecto independiente y no oficial.** No tiene vinculación con Interbanking S.A. ni está avalado por esa empresa. "Interbanking" es una marca registrada de su titular y se menciona solo para indicar con qué API funciona.
+
 Servidor MCP para consultar tus cuentas de **Interbanking** (Argentina) desde un agente:
 saldos, saldos históricos y movimientos, en castellano y sin escribir código.
 
